@@ -27,6 +27,7 @@ $app->withFacades();
 
 $app->withEloquent();
 
+class_alias('Maatwebsite\Excel\Facades\Excel', 'Excel');
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -82,6 +83,8 @@ $app->singleton(
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register('App\Providers\LoadCsvDataServiceProvider');
+$app->register('Maatwebsite\Excel\ExcelServiceProvider');
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
