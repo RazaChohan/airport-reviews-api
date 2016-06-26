@@ -10,7 +10,11 @@
         "vlucas/phpdotenv": "~2.2",
         "basicit/lumen-vendor-publish": "^1.0",
         "maatwebsite/excel": " ~2.1.0",
-        "jeremeamia/superclosure": "~2.2"
+        "jeremeamia/superclosure": "~2.2",
+        "illuminate/container": "5.2.*",
+        "phpdocumentor/reflection-docblock": "3.1.*",
+        "dingo/blueprint": "0.2.x-dev",
+        "dingo/api": "1.0.x-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
