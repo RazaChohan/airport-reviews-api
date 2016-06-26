@@ -1,14 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: chohan
- * Date: 6/26/16
- * Time: 11:37 PM
- */
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 
-class TravellerType {
-
+class TravellerType extends Model {
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = "traveller_types";
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [
+        'id'
+    ];
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 }

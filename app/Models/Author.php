@@ -6,12 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model {
     /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = "authors";
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'name'
+    protected $guarded = [
+        'id'
     ];
     /**
      * Indicates if the model should be timestamped.
@@ -19,4 +25,12 @@ class Author extends Model {
      * @var bool
      */
     public $timestamps = false;
+    /**
+     * One to one relationship with country
+     *
+     */
+    public function country()
+    {
+        return $this->hasOne('App\Models\Country', 'country_id');
+    }
 }

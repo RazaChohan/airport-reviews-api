@@ -1,14 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: chohan
- * Date: 6/27/16
- * Time: 12:56 AM
- */
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 
-class Airport {
-
+class Airport extends Model {
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = "airports";
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [
+        'id'
+    ];
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 }
