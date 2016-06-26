@@ -28,6 +28,8 @@ $app->withFacades();
 $app->withEloquent();
 
 class_alias('Maatwebsite\Excel\Facades\Excel', 'Excel');
+class_alias('Illuminate\Support\Facades\Response', 'Response');
+class_alias('Illuminate\Support\Facades\Config', 'Config');
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings

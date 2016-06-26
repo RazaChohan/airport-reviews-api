@@ -12,4 +12,13 @@ if ( ! function_exists('config_path'))
     {
         return app()->basePath() . '/config' . ($path ? '/' . $path : $path);
     }
+    /**
+     * Check if given string is null or empty.
+     *
+     * @param  string $string
+     * @return bool
+     */
+    function IsNullOrEmptyString($string){
+        return (!isset($string) && trim($string)=='');
+    }
 }
