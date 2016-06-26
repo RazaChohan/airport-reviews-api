@@ -16,7 +16,7 @@ class CreateAuthorTable extends Migration
         {
             $table->increments('id');
             $table->string('name');
-            $table->integer('country_id')->unsigned();
+            $table->integer('country_id')->nullable()->unsigned();
         });
 
         Schema::table('authors', function($table){

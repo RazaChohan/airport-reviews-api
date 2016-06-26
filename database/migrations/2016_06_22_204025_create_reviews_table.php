@@ -15,8 +15,8 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('airport_id')->unsigned();
-            $table->integer('author_id')->unsigned();
+            $table->integer('airport_id')->nullable()->unsigned();
+            $table->integer('author_id')->nullable()->unsigned();
             $table->integer('type_traveller_id')->nullable()->unsigned();
             $table->integer('airport_experience_id')->nullable()->unsigned();
             $table->date('review_date')->nullable();
