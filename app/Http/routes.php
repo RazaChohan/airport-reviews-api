@@ -11,6 +11,10 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->version();
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version('v1', function ($api) {
+    $api->get('/all/stats', 'App\Http\Controllers\AirportController@fetchAirportReviewsCount');
+    $api->get('/{airport}/stats', 'App\Http\Controllers\AirportController@fetchAirportStats');
+    $api->get('/{airport}/reviews', 'App\Http\Controllers\AirportController@fetchAirportReviews');
 });

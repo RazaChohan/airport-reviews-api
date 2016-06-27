@@ -86,6 +86,7 @@ $app->singleton(
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register('App\Providers\LoadCsvDataServiceProvider');
 $app->register('Maatwebsite\Excel\ExcelServiceProvider');
+$app->register('Dingo\Api\Provider\LumenServiceProvider');
 
 /*
 |--------------------------------------------------------------------------
