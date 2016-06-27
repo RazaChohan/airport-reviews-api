@@ -15,8 +15,8 @@ class CreateAirportsTable extends Migration
         Schema::create('airports', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('title',100)->nullable();
-            $table->string('name',100)->nullable();
+            $table->string('title',100)->nullable()->unique();
+            $table->string('name',100)->nullable()->unique();
             $table->string('link',255)->nullable();
         });
     }

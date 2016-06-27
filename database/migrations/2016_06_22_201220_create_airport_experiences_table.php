@@ -15,7 +15,7 @@ class CreateAirportExperiencesTable extends Migration
         Schema::create('airport_experiences', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('experience',100);
+            $table->string('experience',100)->unique();
         });
     }
 

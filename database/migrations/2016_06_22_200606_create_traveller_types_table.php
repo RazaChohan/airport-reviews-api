@@ -15,7 +15,7 @@ class CreateTravellerTypesTable extends Migration
         Schema::create('traveller_types', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('type',100);
+            $table->string('type',100)->unique();;
         });
 
     }
