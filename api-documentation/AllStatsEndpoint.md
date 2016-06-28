@@ -7,17 +7,36 @@ Returns all airports in system with reviews count sorted by total reviews in asc
 
 
 ## Return format
-A collection JSON objects containing keys **Reviews Count** and **title**
+A collection JSON objects containing keys **ReviewsCount** and **Title**
 
 - **Title** — Name/Title of the Airport.
-- **Reviews Count** — The total number of reviews given.
+- **ReviewsCount** — The total number of reviews given.
 
 ## Example
 **Request**
 
     api/all/stats
 
-**Return** __shortened for example purpose__
+**Response** __shortened for example purpose__
 ``` json
-
+{
+  "data": [
+    {
+      "title": "Naples Municipal Airport",
+      "ReviewsCount": "1"
+    },
+    {
+      "title": "Waco Airport",
+      "ReviewsCount": "1"
+    },
+    {
+      "title": "Westerland Airport",
+      "ReviewsCount": "1"
+    },
+    {
+      "title": "Xining Airport",
+      "ReviewsCount": "1"
+    }
+  ]
+}
 ```
