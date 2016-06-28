@@ -7,12 +7,12 @@ Returns statistics of a particular airport with number of reviews, average overa
 
 
 ## Return format
-A JSON object containing keys **Reviews Count** , **Title**, **Average Overall Rating**, **Recommendation Count**
+A JSON object containing keys **ReviewsCount** , **Title**, **AverageOverallRating**, **RecommendationCount**
 
 - **Title** — Name/Title of the Airport.
-- **Reviews Count** — The total number of reviews given.
-- **Average Overall Rating** — The average of all overall ratings for this particular airport
-- **Recommendation Count** — The number of recommendations for this particular airport
+- **ReviewsCount** — The total number of reviews given.
+- **AverageOverallRating** — The average of all overall ratings for this particular airport
+- **RecommendationCount** — The number of recommendations for this particular airport
 
 
 ## Example
@@ -20,7 +20,16 @@ A JSON object containing keys **Reviews Count** , **Title**, **Average Overall R
 
     api/{airport}/stats
 
-**Return** __shortened for example purpose__
+**Response** 
 ``` json
-
+{
+  "data": [
+    {
+      "AirportName": "Aalborg Airport",
+      "ReviewsCount": "10",
+      "AverageOverallRating": "4.60",
+      "RecommendationCount": "3"
+    }
+  ]
+}
 ```
