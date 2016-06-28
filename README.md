@@ -35,13 +35,13 @@ DB_PASSWORD=password
 
 ## Installation
 
-- Open terminal or command prompt and execute the following command by changing your path to directory of this api
+Open terminal or command prompt and execute the following command by changing your path to directory of this api
 
 ```
 php composer.phar install
 ```
-- Create a database with same name as the one mentioned in .env file DB_DATABASE=<DATABASENAME> and execute following command
-  in terminal/command prompt
+Create a database with same name as the one mentioned in .env file DB_DATABASE=<DATABASENAME> and execute following command
+in terminal/command prompt
 
 ```
 php artisan migrate
