@@ -61,6 +61,18 @@ overriden
 php artisan load:csv --filename=/path/to/file/file.csv
 ```
 
+## Depoying API
+
+In order to deploy the application use the following command
+```
+php artisan serve
+```
+By default the above command will use localhost host and 8000 port but one can override it as following 
+
+```
+php artisan serve --host=127.0.0.1 --port=8001
+```
+
 
 ## Endpoints
 
