@@ -7,10 +7,10 @@ Returns all airports in system with reviews count sorted by total reviews in asc
 
 
 ## Return format
-A collection JSON objects containing keys **ReviewsCount** and **title**
+A collection JSON objects containing keys **Reviews Count** and **title**
 
 - **Title** — Name/Title of the Airport.
-- **ReviewsCount** — The total number of reviews given.
+- **Reviews Count** — The total number of reviews given.
 
 ## Example
 **Request**
