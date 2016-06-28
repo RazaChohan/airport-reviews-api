@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Airport;
+use App\Models\Review;
 use Dingo\Api\Facade\API;
 use Laravel\Lumen\Routing\Controller as BaseController;
 
@@ -44,6 +45,19 @@ class AirportController extends BaseController{
     {
         $airportModel = new Airport();
         $data = $airportModel->getAirportReviews($airport);
+        return API::response()->array(['data' => $data], 200);
+    }
+    /**
+     * Fetch reviews for specific rating and airport
+     *
+     * @param int $airport
+     * @param double $ratio
+     */
+    public function fetchReviewForSpecificRatingAndAirport($airportName, $ratingRatio)
+    {
+
+        $reviewModel = new Review();
+        $data = $reviewModel->getSpecificRatioReviews($airportName, $ratingRatio);
         return API::response()->array(['data' => $data], 200);
     }
 }

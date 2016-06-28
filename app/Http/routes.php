@@ -17,4 +17,5 @@ $api->version('v1', function ($api) {
     $api->get('/all/stats', 'App\Http\Controllers\AirportController@fetchAirportReviewsCount');
     $api->get('/{airport}/stats', 'App\Http\Controllers\AirportController@fetchAirportStats');
     $api->get('/{airport}/reviews', 'App\Http\Controllers\AirportController@fetchAirportReviews');
+    $api->get('/{airportName}/{rating}/reviews', 'App\Http\Controllers\AirportController@fetchReviewForSpecificRatingAndAirport');
 });

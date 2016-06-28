@@ -58,4 +58,5 @@ class Airport extends Model {
                                 reviews.review_date as RecommendationData, reviews.content as Content')
                     ->get();
     }
+
 }
