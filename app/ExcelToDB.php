@@ -124,7 +124,7 @@ class ExcelToDB
                 $shouldInsertRecord = true;
             }
             if (!IsNullOrEmptyString($this->record['title'])) {
-                $title = $this->record['title'];
+                $title = trim(str_replace("customer review","",$this->record['title']));
                 $shouldInsertRecord = true;
             }
             if ($shouldInsertRecord) {
@@ -174,11 +174,8 @@ class ExcelToDB
             array_key_exists('recommended', $this->record)
         ) {
 
-            $review = new Review;
-            $review->airport_id = $airportId;
-            $review->author_id = $authorId;
-            $review->type_traveller_id = $typeTravellerId;
-            $review->airport_experience_id = $airportExperienceId;
+            $review = Review::firstOrNew(['airport_id' => $airportId, 'author_id' => $authorId,
+                                          'type_traveller_id' => $typeTravellerId,  'airport_experience_id' => $airportExperienceId]);
             if (array_key_exists('date', $this->record)) {
                 $review->review_date = $this->record['date'];
             }

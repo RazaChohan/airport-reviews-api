@@ -16,7 +16,18 @@ class LoadCsvDataCommand extends Command
      * @var string
      */
     protected $name = 'load:csv';
-
+    /**
+     * The console command name.
+     *
+     * @var string
+     */
+    public $count = -1000;
+    /**
+     * The console command name.
+     *
+     * @var string
+     */
+    public $totRecords;
     /**
      * The console command description.
      *
@@ -44,12 +55,10 @@ class LoadCsvDataCommand extends Command
             return;
         }
         $this->info('Loading File Please Wait....');
-
-        //$totalRecords = $this->countTotalRecordsInFile($filename);
-        $totalRecords = 1000;
-        // $this->info('Total Records: ' . $totalRecords);
-        $count = 0;
-        Excel::filter('chunk')->selectSheetsByIndex(0)->load($filename)->chunk(20, function ($results) use (&$count, $totalRecords) {
+        $this->totRecords = $this->countTotalRecordsInFile($filename);
+        $this->info('Total Records: ' . $this->totRecords);
+        $this->info('Inserting Data in DB , This will take about an hour...');
+        Excel::filter('chunk')->selectSheetsByIndex(0)->load($filename)->chunk(1000, function ($results){
             foreach ($results as $row) {
                 $excelToDB = new ExcelToDB($row->toArray());
                 $excelToDB->insertDataInDb();
@@ -119,11 +128,13 @@ class LoadCsvDataCommand extends Command
     /**
      * Print the passed string
      *
-     * @param string $path
      */
-    public function printLn($str)
+    public function printLn()
     {
-        $this->info($str);
+        $this->count = $this->count + 1000;
+        if ($this->count > 0) {
+            $this->info($this->calculatePercentage($this->count) . '% records are loaded , Please wait...');
+        }
     }
 
     /**
@@ -132,9 +143,9 @@ class LoadCsvDataCommand extends Command
      * @param string $path
      * @return double
      */
-    public function calculatePercentage($totCount, $recordLoaded)
+    public function calculatePercentage($recordLoaded)
     {
-        return ($recordLoaded / $totCount) * 100;
+        return ($recordLoaded / $this->totRecords) * 100;
     }
 
 }
