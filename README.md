@@ -64,7 +64,9 @@ php artisan load:csv --filename=/path/to/file/file.csv
 
 ## Endpoints
 
-
+- **[<code>GET</code> All Airport Statistics](https://github.com/RazaChohan/airport-reviews-api/blob/development/api-documentation/AllStatsEndpoint.md)**
+- **[<code>GET</code> Airport Statistics](https://github.com/RazaChohan/airport-reviews-api/blob/development/api-documentation/AirportStats.md)**
+- **[<code>GET</code> Airport Reviews](https://github.com/RazaChohan/airport-reviews-api/blob/development/api-documentation/AirportReviews.md)**
 
 
 
